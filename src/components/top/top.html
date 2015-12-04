@@ -1,0 +1,10 @@
+<div class="top">
+	<p @click="dropDown=!dropDown">{{username}}<i class="fa fa-angle-down"></i></p>
+	<div class="cate" v-show="dropDown">
+		<ul>
+			<li :class="{'active':cate=='all'}"><a href="/#list/all" @click="dropDown=!dropDown">全部</a></li>
+			<li :class="{'active':cate=='special'}"><a href="/#list/special" @click="dropDown=!dropDown">特别推荐</a></li>
+			<li :class="{'active':cate=='tech'}"><a href="/#list/tech" @click="dropDown=!dropDown">科技</a></li>
+		</ul>	
+	</div>
+</div>

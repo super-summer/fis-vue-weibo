@@ -1,0 +1,43 @@
+<div class="footer">
+	<ul>
+		<li v-bind:class="{'on':currentView=='list'}">
+			<a href="#list/all">
+				<i class="fa fa-home"></i>
+				<p>首页</p>
+			</a>
+		</li>
+		<li v-bind:class="{'on':currentView=='message'}">
+			<a href="#message">
+				<i class="fa fa-envelope-o"></i>
+				<p>消息</p>
+			</a>
+		</li>
+		<li>
+			<div @click="showModal = true">
+				<i class="fa fa-pencil-square-o"></i>
+				<p>发微博</p>				
+			</div>
+		</li>
+		<li v-bind:class="{'on':currentView=='discover'}">
+			<a href="#discover">
+				<i class="fa fa-search"></i>
+				<p>发现</p>
+			</a>
+		</li>
+		<li v-bind:class="{'on':currentView=='user'}">
+			<a href="#user">
+				<i class="fa fa-user"></i>
+				<p>我</p>
+			</a>
+		</li>
+	</ul>
+</div>
+<modal :show.sync="showModal">
+	 <p slot="header">Hi,share your mood with us</p>
+	 <div slot="body">
+	 	<textarea name="" id="" cols="38" rows="6"></textarea>
+	 </div>
+	 <div slot="footer">
+	 	<button class="btn-default">share</button>
+	 </div>
+</modal>

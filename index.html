@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<title>weibo demo</title>
+	<link rel="stylesheet" href="/src/css/public.scss">
+</head>
+<body>
+	<div id="app">
+		<c-top :cate="cate"></c-top>
+		<div class="load" v-bind:class="{'loaded':loaded}" >
+			<i class="fa fa-spinner fa-pulse"></i>
+			加载中……
+		</div>
+        <component :is="currentView" :cate="cate">
+  			<!-- 组件在 vm.currentview 变化时改变 -->
+		</component>
+        <c-footer :current-view="currentView"></c-footer>
+    </div>
+	<script src="/build/scripts/mod.js"></script>
+	<script type="text/javascript">
+		require('main/main.js')
+	</script>
+</body>
+</html>

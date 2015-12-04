@@ -1,0 +1,35 @@
+<div class="cardList">
+	<p>以下是 {{cateName}} 列表</p>
+	<div v-for="ca in cardList" class="card">
+		<header>
+			<a href="#" class="item-avatar"><img :src="ca.avatar" alt="头像1"></a>
+			<div class="u-detail">
+				<a href="#">{{ca.username}}</a>
+				<div class="item-minor text-xxs">
+					<span class="time">{{ca.timestamp | datetime}}</span>
+					<span class="from">{{ca.from}}</span>
+				</div>
+			</div>				
+		</header>
+		<section>
+			<div class="origin-content">{{ca.origin_content}}</div>	
+		</section>
+		<footer>
+			<a href="#">
+				<i class="fa fa-share"></i>
+				<em>{{ca.share}}</em>
+			</a>
+			<i class="line-gradient"> </i>
+			<a href="#p/{{ca.wb_id}}">
+				<i class="fa fa-comment-o"></i>
+				<em>{{ca.comment}}</em>
+			</a>
+			<i class="line-gradient"></i>			
+			<a href="#">
+				<i class="fa fa-thumbs-o-up"></i>
+				<em>{{ca.like}}</em>
+			</a>	
+		</footer>
+	</div>
+</div>
+<div class="place-box"></div>

@@ -1,0 +1,52 @@
+$font-size:14px;
+$font-color:#333333;
+$orange:#f48800;
+$dark-orange:#f46200;
+$light-gray:#929292;
+$dark-gray:#828282;
+
+$bgColor:#f2f2f2;
+@mixin position($position:relative){
+	position:$position;
+}
+@mixin down-arrow($color:#f48800){  //向下的箭头
+	display:inline-block;
+	width:10px;
+	height:10px;
+	border:$color  solid;
+	border-width: 0px 0px 2px 2px;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	@include position;
+	top: -3px;	
+}
+@mixin height-o{
+	height:auto;overflow:hidden;
+}
+@mixin layout-box($direction: row){
+	display: flex;	
+	display: -ms-flexbox;
+	display: -webkit-box;
+    display: -webkit-flex;
+    flex-direction:$direction;
+    -webkit-direction:$direction;
+}
+@mixin box-col{
+	-webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+@mixin box-center($principal:center,$axis:center) {
+    -webkit-justify-content:$principal; //主轴方向上居中 flex-start center flex-end space-around
+    justify-content:$principal; //主轴方向上居中 flex-start center flex-end space-around
+    -webkit-align-items: $axis;
+    align-items: $axis;  //交叉轴上如何对齐
+
+}
+@mixin line-gradient($width:1px,$height:1.3rem,$color:#dadada){
+	width: $width;
+	height:$height;
+	background: -moz-linear-gradient(top, white, $color 50%, white 100%);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(white), color-stop(50%, $color), color-stop(100%, white));
+}

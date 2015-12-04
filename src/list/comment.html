@@ -1,0 +1,55 @@
+<div class="cardList">
+	<div class="card">
+		<header>
+			<a href="#" class="item-avatar"><img :src="card.avatar" alt="头像1"></a>
+			<div class="u-detail">
+				<a href="#">{{card.username}}</a>
+				<div class="item-minor text-xxs">
+					<span class="time" v-text="card.timestamp | datetime"></span>
+					<span class="from">{{card.from}}</span>
+				</div>
+			</div>				
+		</header>
+		<section>
+			<div class="origin-content">{{card.origin_content}}</div>	
+		</section>
+		<footer>
+			<a href="#">
+				<i class="fa fa-share"></i>
+				<em>{{card.share}}</em>
+			</a>
+			<i class="line-gradient"> </i>
+			<a href="#">
+				<i class="fa fa-comment-o"></i>
+				<em>{{card.comment}}</em>
+			</a>
+			<i class="line-gradient"></i>			
+			<a href="#">
+				<i class="fa fa-thumbs-o-up"></i>
+				<em>{{card.like}}</em>
+			</a>	
+		</footer>
+	</div>
+</div>
+<div class="commentList">
+	<div class="layout-box comment-title">
+		<p class="p1">评论 {{card.comment}}</p>
+		<a href="#" class="p2">赞 {{card.like}}</a>
+		<i class="arrow-up"></i>	
+	</div>
+	<div class="comment" v-for="c in commentList">
+		<div class="layout-box">		
+			<a href="#" class="item-avatar"><img :src="c.u_pic" alt="头像1"></a>
+			<div class="u-detail">
+				<a href="#" class="text-xxs">{{c.u_name}}</a>
+				<div class="item-minor text-xxs">
+					<span class="time">{{c.timestamp | datetime}}</span>
+				</div>
+			</div>	
+		</div>
+		<p class="comment-text">
+			{{c.comment}}
+		</p>
+	</div>
+</div>
+<div class="place-box"></div>

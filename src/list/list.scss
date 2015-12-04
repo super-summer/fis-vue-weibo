@@ -1,0 +1,123 @@
+@import "../css/common.scss"
+
+.item-avatar{
+	img{
+		width:2.5rem;
+	}
+}
+.u-detail{
+	padding-left: 0.5rem;
+	a{
+		color:$dark-orange;
+		font-size: 1.1rem;
+		display: block;
+		margin-bottom: 0.3rem;
+		font-weight: 600;
+
+	}
+	.time{
+		color:$orange;
+		margin-right: 0.6rem;
+	}
+	.from{
+		color:$dark-gray;
+	}
+}
+.cardList{
+	box-shadow: 0px 1px 3px #cdcdcd;
+	.card{
+		background: #fff;
+		margin-top: 15px;
+		padding: 0.7rem 0.7rem 0;
+	}
+	header{
+		@include layout-box;
+	}
+	section{
+		.origin-content{
+			line-height: 1.35rem;
+			word-wrap:break-word;
+			padding: 0.5rem 0;
+		}
+	}
+	footer{
+		@include layout-box;
+		@include box-center;
+		-webkit-box-align:center;
+		height: 2.5rem;
+		border-top: 1px solid #efefef; 
+		color:$light-gray;
+		a{
+			color:inherit;
+			display: block;
+			@include box-col;
+			text-align: center;
+			line-height: 2rem;
+		}
+		i.line-gradient{
+			@include line-gradient;
+		}	
+	}
+}
+.commentList{
+	$g:#dfdfdf;
+	margin-top: 1rem;
+	background: white;
+	.comment-title{
+		padding:0 1rem;
+		@include box-center;
+		border-bottom: 1px solid $g;
+		line-height: 2.5rem;
+		position: relative;
+		.p1{
+			flex:3;
+			-webkit-flex:3;
+			margin: 0;
+		}
+		.p2{
+			flex:1;
+			-webkit-flex:1;
+			text-align: right;
+			color:$light-gray;
+		}
+		i.arrow-up{
+			position:absolute;
+			transform: rotate(-45deg);
+			left:30px;
+			bottom: -4px;
+		    width: 8px;
+		    height: 8px;
+		    display: block;
+		    border: solid $g;
+		    border-width: 1px 1px 0 0;
+		    background: white;
+		}
+	}
+	.comment{
+		padding:0.7rem;
+		border-bottom:1px solid $g;
+		color:#5d5d5d;
+		.u-detail{
+			a{
+				color:$dark-gray;
+				font-weight: normal;
+				font-size: 14px;
+
+			}
+			.time{color:$light-gray;}
+		}
+		.comment-text{
+			line-height: 1.35rem;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
